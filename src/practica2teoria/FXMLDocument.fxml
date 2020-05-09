@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="practica2teoria.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="227.0" prefWidth="623.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="practica2teoria.FXMLDocumentController">
     <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <Text layoutX="158.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INGRESO GRAMÁTICA" wrappingWidth="237.336669921875">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <TextField fx:id="NTProduccion" layoutX="34.0" layoutY="91.0" onKeyTyped="#NTProduccionHilera" prefHeight="26.0" prefWidth="124.0" promptText="No terminal" />
+      <Button fx:id="botonSiguiente" disable="true" layoutX="378.0" layoutY="187.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="143.0" text="Siguiente Producción" />
+      <Button fx:id="botonTerminar" disable="true" layoutX="538.0" layoutY="187.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Terminar" />
+      <Button fx:id="btnAceptarNTP" disable="true" layoutX="96.0" layoutY="124.0" mnemonicParsing="false" onAction="#botonAceptarNTP" prefHeight="26.0" prefWidth="88.0" text="Aceptar" />
+      <Button fx:id="btnBorrarUlt" disable="true" layoutX="498.0" layoutY="124.0" mnemonicParsing="false" onAction="#btnBorrarUltAcc" text="Borrar Último" />
+      <Button fx:id="botonBorrar" disable="true" layoutX="14.0" layoutY="124.0" mnemonicParsing="false" onAction="#botonBorrarNTP" prefHeight="26.0" prefWidth="70.0" text="Borrar" />
+      <Text layoutX="231.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-&gt;" wrappingWidth="28.186080932617188">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <TextField fx:id="hileraProduccion" disable="true" layoutX="268.0" layoutY="90.0" onKeyTyped="#hileraProd" prefHeight="26.0" prefWidth="318.0" promptText="Terminal y No Terminal" />
+      <Button fx:id="botonAbre" disable="true" layoutX="268.0" layoutY="124.0" mnemonicParsing="false" onAction="#botonAbreAcc" prefHeight="26.0" prefWidth="36.0" text="&lt;" />
+      <Button fx:id="botonCierra" disable="true" layoutX="320.0" layoutY="123.0" mnemonicParsing="false" onAction="#botonCierraAcc" prefHeight="26.0" prefWidth="36.0" text="&gt;" />
+      <Text layoutX="158.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt;" wrappingWidth="28.186080932617188">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text layoutX="14.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="18.586105346679688">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>
