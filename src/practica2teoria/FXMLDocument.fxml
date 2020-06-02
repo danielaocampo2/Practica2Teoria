@@ -7,34 +7,46 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="227.0" prefWidth="623.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="practica2teoria.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="238.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="practica2teoria.FXMLDocumentController">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <Text layoutX="158.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INGRESO GRAMÁTICA" wrappingWidth="237.336669921875">
+      <Text layoutX="115.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INGRESO GRAMÁTICA" wrappingWidth="237.336669921875">
          <font>
             <Font size="22.0" />
          </font>
       </Text>
-      <TextField fx:id="NTProduccion" layoutX="34.0" layoutY="91.0" onKeyTyped="#NTProduccionHilera" prefHeight="26.0" prefWidth="124.0" promptText="No terminal" />
-      <Button fx:id="botonSiguiente" disable="true" layoutX="378.0" layoutY="187.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="143.0" text="Siguiente Producción" />
-      <Button fx:id="botonTerminar" disable="true" layoutX="538.0" layoutY="187.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Terminar" />
-      <Button fx:id="btnAceptarNTP" disable="true" layoutX="96.0" layoutY="124.0" mnemonicParsing="false" onAction="#botonAceptarNTP" prefHeight="26.0" prefWidth="88.0" text="Aceptar" />
-      <Button fx:id="btnBorrarUlt" disable="true" layoutX="498.0" layoutY="124.0" mnemonicParsing="false" onAction="#btnBorrarUltAcc" text="Borrar Último" />
-      <Button fx:id="botonBorrar" disable="true" layoutX="14.0" layoutY="124.0" mnemonicParsing="false" onAction="#botonBorrarNTP" prefHeight="26.0" prefWidth="70.0" text="Borrar" />
-      <Text layoutX="231.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-&gt;" wrappingWidth="28.186080932617188">
+      <TextField fx:id="NTProduccion" layoutX="34.0" layoutY="88.0" onKeyTyped="#NTProduccionHilera" prefHeight="26.0" prefWidth="88.0" promptText="No terminal" />
+      <Button fx:id="botonSiguiente" disable="true" layoutX="124.0" layoutY="184.0" mnemonicParsing="false" onAction="#botonSiguienteProduccion" prefHeight="26.0" prefWidth="169.0" text="Siguiente Producción" />
+      <Button fx:id="botonTerminar" disable="true" layoutX="326.0" layoutY="184.0" mnemonicParsing="false" onAction="#botonTerminarAccionado" prefHeight="26.0" prefWidth="102.0" text="Terminar" />
+      <Button fx:id="btnAceptarNTP" disable="true" layoutX="34.0" layoutY="123.0" mnemonicParsing="false" onAction="#botonAceptarNTP" prefHeight="26.0" prefWidth="88.0" text="Aceptar" />
+      <Text layoutX="161.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-&gt;" wrappingWidth="48.18608093261719">
          <font>
             <Font size="26.0" />
          </font>
       </Text>
-      <TextField fx:id="hileraProduccion" disable="true" layoutX="268.0" layoutY="90.0" onKeyTyped="#hileraProd" prefHeight="26.0" prefWidth="318.0" promptText="Terminal y No Terminal" />
-      <Button fx:id="botonAbre" disable="true" layoutX="268.0" layoutY="124.0" mnemonicParsing="false" onAction="#botonAbreAcc" prefHeight="26.0" prefWidth="36.0" text="&lt;" />
-      <Button fx:id="botonCierra" disable="true" layoutX="320.0" layoutY="123.0" mnemonicParsing="false" onAction="#botonCierraAcc" prefHeight="26.0" prefWidth="36.0" text="&gt;" />
-      <Text layoutX="158.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt;" wrappingWidth="28.186080932617188">
+      <TextField fx:id="hileraPT" disable="true" layoutX="221.0" layoutY="75.0" onKeyTyped="#hileraPTManejo" prefHeight="26.0" prefWidth="60.0" promptText="Terminal" />
+      <Button fx:id="botonT" disable="true" layoutX="227.0" layoutY="149.0" mnemonicParsing="false" onAction="#botonTAccionado" prefHeight="26.0" prefWidth="48.0" text="T" />
+      <Button fx:id="botonNT" disable="true" layoutX="278.0" layoutY="149.0" mnemonicParsing="false" onAction="#botonNTAccionado" prefHeight="26.0" prefWidth="48.0" text="NT" />
+      <Text layoutX="122.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt;" wrappingWidth="28.186080932617188">
          <font>
             <Font size="26.0" />
          </font>
       </Text>
-      <Text layoutX="14.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="18.586105346679688">
+      <Text layoutX="14.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="18.586105346679688">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <TextField fx:id="hileraPNT" disable="true" layoutX="221.0" layoutY="115.0" onKeyTyped="#hileraPNTManejo" prefHeight="26.0" prefWidth="60.0" promptText="NT" />
+      <Button fx:id="aceptarPT" disable="true" layoutX="326.0" layoutY="75.0" mnemonicParsing="false" onAction="#botonAceptarPT" prefHeight="26.0" prefWidth="78.0" text="Aceptar" />
+      <Button fx:id="aceptarPNT" disable="true" layoutX="326.0" layoutY="115.0" mnemonicParsing="false" onAction="#botonAceptarPNT" prefHeight="26.0" prefWidth="78.0" text="Aceptar" />
+      <Button fx:id="botonLambda" disable="true" layoutX="176.0" layoutY="149.0" mnemonicParsing="false" onAction="#botonLambdaAccionado" prefHeight="26.0" prefWidth="48.0" text="\$" />
+      <Text layoutX="200.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="18.586105346679688">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text layoutX="288.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt;" wrappingWidth="28.186080932617188">
          <font>
             <Font size="26.0" />
          </font>
