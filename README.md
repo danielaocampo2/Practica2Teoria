@@ -5,3 +5,6 @@
  - Finalmente, independiente de si es o no S, Q ó LL(1), deberá dar la opción de terminar el programa ó ingresar una nueva gramática."
  
  Para mayor información sobre nuestro proyecto, diríjase al apartado de wiki.
+ 
+  
+Autores: Simón Rodríguez y Daniela Ocampo.
