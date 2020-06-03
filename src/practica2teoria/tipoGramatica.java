@@ -33,7 +33,6 @@ public class tipoGramatica {
     public static String hileConjuntos = "";
 
     public static void reinicializarTipoGramatica() {
-        
         hileraSiguiente = "";
         hileraPrimeros = "";
         hileConjuntos = "";
@@ -45,9 +44,7 @@ public class tipoGramatica {
         seleccion.clear();
         tablaAutomata.clear();
         simPila.clear();
-        instrucciones.clear();
-        
-        
+        instrucciones.clear();          
     }
 
     /**
@@ -116,9 +113,12 @@ public class tipoGramatica {
             hileConjuntos += "LA GRAMÁTICA ES LL(1) \n";
             System.out.println("la gramarica es LL(1) ");
         }
-
-        simPila = Automata.simPila();
+        
         imprimirComplemento();
+        if (conjuntosSele) { // solo si es un gramatica s,q o ll1 crea el automata de pila.
+           simPila = Automata.simPila();
+           Automata.creaTabla();  
+        }
     }
 
     /**
@@ -168,17 +168,17 @@ public class tipoGramatica {
         System.out.println("Conjuntos de seleccion para cada producción");
         for (int i = 0; i < gramatica.size(); i++) {
             int k = i + 1;
-            hileConjuntos += "Sección: " + k + "\n";
+            hileConjuntos += "Selección: " + k + "\n";
             System.out.println("seleccion: " + k);
             for (int j = 0; j < seleccion.get(i).size(); j++) {
                 hileConjuntos += seleccion.get(i).get(j) + "\n";
                 System.out.println(seleccion.get(i).get(j));
             }
         }
-        hileConjuntos += "SIMBOLOS EN LA PILA: \n ";
+        //hileConjuntos += "SIMBOLOS EN LA PILA: \n ";
         System.out.println("simbolos de pila");
         for (int i = 0; i < simPila.size(); i++) {
-
+            hileConjuntos += simPila.get(i) + "\n";
             System.out.println(simPila.get(i));
         }
 

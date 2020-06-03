@@ -19,7 +19,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="botonAutomata" layoutX="183.0" layoutY="432.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="91.0" text="Autómata" />
+      <Button fx:id="botonAutomata" layoutX="183.0" layoutY="432.0" mnemonicParsing="false" onAction="#botonAutomata" prefHeight="26.0" prefWidth="91.0" text="Autómata" />
       <Button fx:id="botonNuevaGramatica" layoutX="14.0" layoutY="432.0" mnemonicParsing="false" onAction="#botonNuevaGramaticaAccionado" prefHeight="26.0" prefWidth="141.0" text="Nueva Gramática" />
       <Button fx:id="botonCerrar" layoutX="300.0" layoutY="432.0" mnemonicParsing="false" onAction="#botonCerrarAccionado" prefHeight="26.0" prefWidth="68.0" text="Cerrar" />
    </children>

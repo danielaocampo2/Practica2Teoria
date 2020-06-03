@@ -45,10 +45,26 @@ public class FXMLGramaticaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         String grama = imprimirGramatica();
-        hileraGramatica.setText(grama);
         tipoGramatica tipo = new tipoGramatica();
         tipo.posibleG();
+        hileraGramatica.setText(grama);
         hileraConjuntos.setText(tipoGramatica.hileConjuntos);
+    }
+    
+    @FXML
+    public void botonAutomata(ActionEvent event) throws Exception{
+        //tipoGramatica tipo = new tipoGramatica();
+        //tipo.reinicializarTipoGramatica();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLAutomata.fxml"));
+        Parent root1 = (Parent) fxmlLoader.load();
+        Stage stage1 = new Stage();
+        stage1.setScene(new Scene(root1));
+        stage1.setResizable(false);
+        stage1.show();
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+        
     }
     
     /**
@@ -61,8 +77,7 @@ public class FXMLGramaticaController implements Initializable {
     @FXML
     public void botonNuevaGramaticaAccionado(ActionEvent event) throws Exception {
         FXMLDocumentController.reinicializarGramatica();
-        //tipoGramatica tipo = new tipoGramatica();
-        //tipo.reinicializarTipoGramatica();
+        //Automata.reinicializarAutomata();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage1 = new Stage();

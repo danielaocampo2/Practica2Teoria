@@ -16,6 +16,8 @@ public class Automata {
     private static ArrayList<String> simPila = new ArrayList<>();
     public ArrayList<String> sEntra = new ArrayList<>();
     public ArrayList<String> instrucciones = new ArrayList<>();
+    public static String hileraAutomata = "";
+    public static String hilerasimpila = "";
 
     /**
      * Encuentra los símbolos de la pila, evaluando cada una de las producciones
@@ -23,6 +25,12 @@ public class Automata {
      * "vacia" que es lo que remplazara al simbolo ▼
      *
      */
+    
+    public static void reinicializarAutomata(){
+        simPila.clear();
+        hileraAutomata = "";
+        hilerasimpila = "";
+    }
 
     public ArrayList simPila() {
 
@@ -44,8 +52,7 @@ public class Automata {
             }
         }
         simPila.add("vacia");
-
-        return simPila;
+     return simPila;
     }
 
     /**
@@ -57,6 +64,7 @@ public class Automata {
     public void creaTabla() {
 
         sEntra = tipoGramatica.sEntrada;
+        hileraAutomata+= " AUTOMATA \n";
         System.out.println(" AUTOMATA ");
         sEntra.add("~");
         int a = sEntra.size() + 1;
@@ -76,11 +84,13 @@ public class Automata {
         for (String[] row : automata) {
             printRow(row);
         }
-        
+        hileraAutomata += "Instrucciones correspondientes: \n";
         System.out.println("Instrucciones correspondientes:");
         for (int i = 0; i < instrucciones.size(); i++) {
             int k=i+1;
+            hileraAutomata+= k + ": significa:  \n";
             System.out.println(k+": significa: ");
+            hileraAutomata+= instrucciones.get(i) + "\n";
             System.out.println(instrucciones.get(i));
         }
 
@@ -93,7 +103,7 @@ public class Automata {
      * @param automata.
      *
      */
-    public void creaAutomata(String[][] automata) {
+    public  void creaAutomata(String[][] automata) {
 
         for (int i = 0; i < tipoGramatica.gramatica.size(); i++) {
             if (!tipoGramatica.estados.contains(tipoGramatica.gramatica.get(i).get(1))) {
@@ -159,9 +169,11 @@ public class Automata {
 
     public void printRow(String[] row) {
         for (String i : row) {
+            hileraAutomata+= i + "\t";
             System.out.print(i);
             System.out.print("\t");
         }
+        hileraAutomata+= "\n";
         System.out.println();
     }
 
