@@ -25,7 +25,7 @@ public class tipoGramatica {
     public static List<List<String>> primeros = new ArrayList<List<String>>();
     public static List<List<String>> gramatica = new ArrayList<List<String>>();
     public static ArrayList<String> estados = new ArrayList<>(); // Acá guarda todos los no terminales
-    private static ArrayList<String> sEntrada = new ArrayList<>();
+    public static ArrayList<String> sEntrada = new ArrayList<>();
     public static List<List<String>> primerosProduccion = new ArrayList<List<String>>();
     public static List<List<String>> siguientesNT = new ArrayList<List<String>>();
     public static List<List<String>> seleccion = new ArrayList<List<String>>();
