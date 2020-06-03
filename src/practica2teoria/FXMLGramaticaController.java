@@ -82,7 +82,7 @@ public class FXMLGramaticaController implements Initializable {
     @FXML
     public void botonNuevaGramaticaAccionado(ActionEvent event) throws Exception {
         FXMLDocumentController.reinicializarGramatica();
-        //Automata.reinicializarAutomata();
+        Automata.reinicializarAutomata();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage1 = new Stage();
