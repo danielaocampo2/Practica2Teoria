@@ -37,6 +37,7 @@ public class FXMLGramaticaController implements Initializable {
     @FXML
     private Button botonAutomata;
     private String hileGrama = "";
+    public static boolean sehaceautomata;
 
     /**
      * Inicializa el controlador del fxml y además imprime en el área de texto
@@ -49,6 +50,11 @@ public class FXMLGramaticaController implements Initializable {
         tipo.posibleG();
         hileraGramatica.setText(grama);
         hileraConjuntos.setText(tipoGramatica.hileConjuntos);
+        if(sehaceautomata == false){
+            botonAutomata.setDisable(true);
+        } else{
+            botonAutomata.setDisable(false);
+        }
     }
     
     /**

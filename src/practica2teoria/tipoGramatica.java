@@ -116,8 +116,12 @@ public class tipoGramatica {
         
         imprimirComplemento();
         if (conjuntosSele) { // solo si es un gramatica s,q o ll1 crea el automata de pila.
+            FXMLGramaticaController.sehaceautomata = true;
            simPila = Automata.simPila();
            Automata.creaTabla();  
+        } else{
+            FXMLGramaticaController.sehaceautomata = false;
+            
         }
     }
 
