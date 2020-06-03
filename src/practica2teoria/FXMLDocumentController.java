@@ -393,7 +393,7 @@ public class FXMLDocumentController implements Initializable {
 
                 } else {
                     gramatica.get(contadorProducciones).add(Character.toString(produccion.charAt(j)));
-                    if (!sEntrada.contains(Character.toString(produccion.charAt(j)))) { // verifica que el estado no este agregado
+                    if (!sEntrada.contains(Character.toString(produccion.charAt(j)))&& !Character.toString(produccion.charAt(j)).equals("$")) { // verifica que el estado no este agregado
                         sEntrada.add(Character.toString(produccion.charAt(j)));
                     }
                 }
