@@ -37,6 +37,12 @@ public class FXMLAutomataController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         cajaTextoAutomata.setText(Automata.hileraAutomata);
     }
+    
+    /**
+     * Reinicia el proceso de la gramática.
+     * @param event
+     * @throws Exception 
+     */
     @FXML
     public void botonNuevaGramaticaAccionado(ActionEvent event) throws Exception {
         FXMLDocumentController.reinicializarGramatica();

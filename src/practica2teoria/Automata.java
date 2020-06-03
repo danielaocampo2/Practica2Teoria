@@ -22,7 +22,7 @@ public class Automata {
     /**
      * Encuentra los símbolos de la pila, evaluando cada una de las producciones
      * y buscando los terminales que se encuentren un un α o β y agregando
-     * "vacia" que es lo que remplazara al simbolo ▼
+     * "vacia" que es lo que remplazara al simbolo ▼.
      *
      */
     

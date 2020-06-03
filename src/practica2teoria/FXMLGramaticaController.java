@@ -51,6 +51,11 @@ public class FXMLGramaticaController implements Initializable {
         hileraConjuntos.setText(tipoGramatica.hileConjuntos);
     }
     
+    /**
+     * Abre una nueva ventana donde se mostrará el autómata.
+     * @param event
+     * @throws Exception 
+     */
     @FXML
     public void botonAutomata(ActionEvent event) throws Exception{
         //tipoGramatica tipo = new tipoGramatica();
