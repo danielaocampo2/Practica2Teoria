@@ -156,7 +156,6 @@ public class FXMLDocumentController implements Initializable {
      */
     @FXML
     public void NTProduccionHilera(javafx.scene.input.KeyEvent keyEvent) {
-
         NTProduccion.setTextFormatter(new TextFormatter<String>((Change change) -> {
             String newText = change.getControlNewText();
             if (newText.length() > 1) {
@@ -261,7 +260,10 @@ public class FXMLDocumentController implements Initializable {
             btnAceptarNTP.setDisable(true);
             botonT.setDisable(false);
             botonNT.setDisable(false);
-            botonLambda.setDisable(false);
+            if(contadorProducciones > 0){
+                botonLambda.setDisable(false);
+            }
+            
             aceptarPNT.setDisable(true);
             String prod = NTProduccion.getText().toUpperCase();
             setProduccion(produccion + "<" + prod + ">" + "->");
@@ -288,7 +290,7 @@ public class FXMLDocumentController implements Initializable {
             botonNT.setDisable(false);
             botonT.setDisable(false);
             aceptarPT.setDisable(true);
-            setProduccion(produccion + hileraPT.getText());
+            setProduccion(produccion + hileraPT.getText().toLowerCase());
             System.out.println(produccion);
             hileraPT.setText("");
             botonSiguiente.setDisable(false);
